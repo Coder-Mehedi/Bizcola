@@ -55,7 +55,7 @@
         //isotop filtering
         jQuery('#container').imagesLoaded(function() {
             jQuery('.filter-button-group').on('click', 'li', function() {
-                var filterValue = $(this).attr('data-filter');
+                var filterValue = jQuery(this).attr('data-filter');
                 $grid.isotope({
                     filter: filterValue
                 });
@@ -72,11 +72,11 @@
 
         // filtering li active
         jQuery('.filter-btn').on("click", function() {
-            if ($(this).hasClass('active-btn')) {
-                $(this).removeClass('active-btn');
+            if (jQuery(this).hasClass('active-btn')) {
+                jQuery(this).removeClass('active-btn');
             } else {
-                $(this).addClass('active-btn');
-                $(this).siblings().removeClass('active-btn');
+                jQuery(this).addClass('active-btn');
+                jQuery(this).siblings().removeClass('active-btn');
             }
         });
 

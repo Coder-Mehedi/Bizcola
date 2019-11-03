@@ -216,48 +216,60 @@
                 </div>
             </div>
             <div class="row grid">
-                <div class="col-lg-5 col-md-7 grid-item cat3 cat4 wow fadeInDown">
+                
+            <!-- Air Cargo -->
+        <?php if($recent_project_air_cargos): ?>
+            <?php foreach($recent_project_air_cargos as $recent_project_air_cargo): ?>
+                <div class="col-lg-5 col-md-7 grid-item cat1 wow fadeInDown">
                     <div class="port-img">
-                        <a href="assets/img/portfolio/portfolio-1.jpg" data-fancybox="images" data-caption="image 1">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-1.jpg" alt="portlio-image">
+                        <a href="<?php echo $recent_project_air_cargo['url'] ?>" data-fancybox="images" data-caption="image 2">
+                            <img src="<?php echo $recent_project_air_cargo['url'] ?>" alt="portlio-image">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-5 grid-item cat1 cat4 wow fadeInDown">
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+        <?php if($recent_project_sea_shippings): ?>
+            <?php foreach($recent_project_sea_shippings as $recent_project_sea_shipping): ?>
+
+                <div class="col-lg-3 col-md-5 grid-item cat2 cat3  wow fadeInDown">
                     <div class="port-img">
-                        <a href="assets/img/portfolio/portfolio-2.jpg" data-fancybox="images" data-caption="image 2">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-2.jpg" alt="portlio-image">
+                        <a href="<?php echo $recent_project_sea_shipping['url'] ?>" data-fancybox="images" data-caption="image 3">
+                            <img src="<?php echo $recent_project_sea_shipping['url']; ?>" alt="portlio-image">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-7 grid-item cat2 cat3  wow fadeInDown">
+            <?php endforeach; ?>
+        <?php endif; ?>
+    <?php if($recent_project_road_transports): ?>
+        <?php foreach($recent_project_road_transports as $recent_project_road_transport): ?>    
+                
+                <div class="col-lg-4 col-md-7 grid-item cat3  wow fadeInUp">
                     <div class="port-img">
-                        <a href="assets/img/portfolio/portfolio-3.jpg" data-fancybox="images" data-caption="image 3">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-3.jpg" alt="portlio-image">
+                        <a href="<?php echo $recent_project_road_transport['url'] ?>" data-fancybox="images" data-caption="image 6">
+                            <img src="<?php echo $recent_project_road_transport['url'] ?>" alt="portlio-image">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-5 grid-item cat1 cat4  wow fadeInUp">
-                    <div class="port-img">
-                        <a href="assets/img/portfolio/portfolio-4.jpg" data-fancybox="images" data-caption="image 4">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-4.jpg" alt="portlio-image">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-7 grid-item cat2 cat1 cat4 wow fadeInUp">
-                    <div class="port-img">
-                        <a href="assets/img/portfolio/portfolio-5.jpg" data-fancybox="images" data-caption="5">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-5.jpg" alt="portlio-image">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-5 grid-item cat3  wow fadeInUp">
-                    <div class="port-img">
-                        <a href="assets/img/portfolio/portfolio-6.jpg" data-fancybox="images" data-caption="image 6">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/portfolio-6.jpg" alt="portlio-image">
-                        </a>
-                    </div>
-                </div>
+
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+    <?php if($recent_project_lighter_ships): ?>
+        <?php foreach($recent_project_lighter_ships as $recent_project_lighter_ship): ?> 
+
+        <div class="col-lg-5 col-md-6 grid-item cat4 wow fadeInDown">
+            <div class="port-img">
+                <a href="<?php echo $recent_project_lighter_ship['url']; ?>" data-fancybox="images" data-caption="image 1">
+                    <img src="<?php echo $recent_project_lighter_ship['url']; ?>" alt="portlio-image">
+                </a>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+
             </div>
         </div>
     </section>
