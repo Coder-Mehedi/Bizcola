@@ -1,5 +1,4 @@
 <?php require_once 'include/acf_query.php'; ?>
-<?php // print_r($sliders); ?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="la">
@@ -107,247 +106,84 @@
                 </div>
             </div>
             <div class="row ml-270">
+        <?php foreach($about_bottoms as $about_bottom): ?>
+
                 <div class="col-md-4 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="about-item">
                         <div class="about-itm-heading">
                             <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/about-icon-1.png" alt="icon">
+                                <img src="<?php echo $about_bottom['icon']['url'] ?>" alt="icon">
                             </div>
-                            <h4>Maesuada risus</h4>
+                            <h4><?php echo $about_bottom['title']; ?></h4>
                         </div>
-                        <p>Morbi urna lectus, tristique ac gravida sit amet Integer consectetur.</p>
+                        <p><?php echo $about_bottom['content']; ?></p>
                     </div>
                 </div>
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="about-item">
-                        <div class="about-itm-heading">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/about-icon-2.png" alt="icon">
-                            </div>
-                            <h4>Lorem ipsum do</h4>
-                        </div>
-                        <p>Tectus, tristique ac gravida sit amet Integer consectetur pharetrm</p>
-                    </div>
-                </div>
-                <div class="col-md-4 wow fadeInRight" data-wow-delay="0.6s">
-                    <div class="about-item">
-                        <div class="about-itm-heading">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/about-icon-3.png" alt="icon">
-                            </div>
-                            <h4>Maesuada risus</h4>
-                        </div>
-                        <p>Morbi urna lectus, tristique ac gravida sit amet Integer consectetur pharetrm</p>
-                    </div>
-                </div>
+        <?php endforeach; ?>
+
             </div>
         </div>
     </section>
 
     <!-- ============= About Us Area End =========== -->
+    <?php $services_items = new WP_Query(['post_type' => 'our_service']); ?>
+    <?php if ( $services_items->have_posts()): ?>
     <!-- ============= Our Services Area Start =========== -->
     <section class="service-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2 class="wow fadeInDown">Our Services</h2>
-                        <p class="wow fadeInUp">Etiam id augue sollicitudin ex ultrices accumsan id eget urna. Duis ut vestibulum arcu. Ut congue facilisis nulla.</p>
+                        <h2 class="wow fadeInDown"><?php echo $our_services_title; ?></h2>
+                        <p class="wow fadeInUp"><?php echo $our_services_description; ?></p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="service-active owl-carousel">
+
+
+<?php while ($services_items->have_posts()) : $services_items->the_post(); ?>
+    <?php $our_services_posts_icon = get_field('our_services_posts_icon') ?>
                         <div class="service-items">
                             <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="service">
+                                <img src="<?php echo the_post_thumbnail_url(); ?>" alt="service">
                             </div>
                             <div class="service-item">
                                 <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-1.png" alt="service-icon">
+                                    <img src="<?php echo $our_services_posts_icon; ?>" alt="service-icon">
                                 </div>
                                 <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
+                                    <h4><?php the_title(); ?></h4>
+                                    <p><?php the_content( ); ?></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-2.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Air Cargo</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-3.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-3.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-1.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-2.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Air Cargo</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-3.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-3.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-1.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-2.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Air Cargo</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-3.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-3.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-1.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-2.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Air Cargo</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-items">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-3.jpg" alt="service">
-                            </div>
-                            <div class="service-item">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/service-icon-3.png" alt="service-icon">
-                                </div>
-                                <div class="service-item-content">
-                                    <h4>Ship Repair</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elhgit, sed do eiusmod temp.</p>
-                                </div>
-                            </div>
-                        </div>
+<?php endwhile; ?>
+ 
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- ============= Our Services Area End =========== -->
+       <?php endif; ?>
     <!-- ============= Subscribe Area Start =========== -->
     <section class="subscribe-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2 class="wow fadeInDown">Subscribe</h2>
-                        <p class="wow fadeInUp">Cras viverra consequat eros ut imperdiet. In suscipit convallis lacus a posuere. Vestibulum sit amet sapien dapibus, mollis sem.</p>
+                        <h2 class="wow fadeInDown"><?php echo $subscribe_section_title; ?></h2>
+                        <p class="wow fadeInUp"><?php echo $subscribe_section_description; ?></p>
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-2 wow bounceIn">
                     <form action="">
                         <div class="subscribe-input">
                             <input type="email" placeholder="Enter Your Email Here">
-                            <button class="sub theme-btn">Subscribe</button>
+                            <button class="sub theme-btn"><?php echo $subscribe_button_link['title'] ? $subscribe_button_link['title'] : ''; ?></button>
                         </div>
                     </form>
                 </div>
@@ -432,53 +268,29 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading wow fadeInDown">
-                        <h2>Happy Clients Say</h2>
+                        <h2><?php echo $client_and_review_section_title ? $client_and_review_section_title : ''; ?></h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="clients-active owl-carousel">
+        <?php foreach($clients_and_reviews as $client_and_review): ?>
+
                         <div class="client-item  wow fadeInUp">
                             <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
+                                <img src="<?php echo $client_and_review['photo']['url'] ? $client_and_review['photo']['url'] : '' ?>" alt="client">
                             </div>
                             <div class="client-content">
-                                <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
-                                <h4>Matilda Joyce</h4>
-                                <h5>Doctor</h5>
+                                <p><?php echo $client_and_review['description'] ? $client_and_review['description'] : ''; ?></p>
+
+                                <h4><?php echo $client_and_review['name'] ? $client_and_review['name'] : 'No Name Provided' ?></h4>
+                                <h5><?php echo $client_and_review['job_field'] ? $client_and_review['job_field'] : ''; ?></h5>
                             </div>
                         </div>
-                        <div class="client-item  wow fadeInUp">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
-                            </div>
-                            <div class="client-content">
-                                <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
-                                <h4>Matilda Joyce</h4>
-                                <h5>Doctor</h5>
-                            </div>
-                        </div>
-                        <div class="client-item  wow fadeInUp">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
-                            </div>
-                            <div class="client-content">
-                                <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
-                                <h4>Matilda Joyce</h4>
-                                <h5>Doctor</h5>
-                            </div>
-                        </div>
-                        <div class="client-item wow fadeInUp">
-                            <div class="zoom">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
-                            </div>
-                            <div class="client-content">
-                                <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
-                                <h4>Matilda Joyce</h4>
-                                <h5>Doctor</h5>
-                            </div>
-                        </div>
+        <?php endforeach; ?>
+                        
+
                     </div>
                 </div>
             </div>
@@ -587,54 +399,39 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading mb-30 text-center">
-                        <h2 class="wow fadeInDown">Our Recent Blog</h2>
-                        <p class="wow fadeInUp">Etiam id augue sollicitudin ex ultrices accumsan id eget urna. Duis ut vestibulum arcu. Ut congue facilisis.</p>
+                        <h2 class="wow fadeInDown"><?php echo $customize_recent_blog_section_title ? $customize_recent_blog_section_title : ''; ?></h2>
+                        <p class="wow fadeInUp"><?php echo $customize_recent_blog_section_description ? $customize_recent_blog_section_description : ''; ?></p>
                     </div>
                 </div>
             </div>
             <div class="row">
+        <?php if (have_posts()):
+                while ( have_posts() ): the_post(); ?>
+            
                 <div class="col-md-6 dis-flex wow fadeInLeft">
                     <div class="single-recent-post">
                         <div class="img-hidden">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-1.jpg" alt="blog">
+                            <img src="<?php the_post_thumbnail_url(); ?>" alt="blog">
                         </div>
                         <div class="single-blog-content">
                             <div class="single-blog-rating">
                                 <ul>
-                                    <li><a href=""><span><i class="fas fa-user"></i></span>John Doe</a></li>
-                                    <li><a href=""><span><i class="far fa-clock"></i></span>08:35 PM</a></li>
-                                    <li><a href=""><span><i class="far fa-calendar-alt"></i></span>JUL 19, 2018</a></li>
+                                    <li><a href=""><span><i class="fas fa-user"></i></span><?php echo get_the_author_meta('display_name') ?></a></li>
+                                    <li><a href=""><span><i class="far fa-clock"></i></span><?php the_time(); ?></a></li>
+                                    <li><a href=""><span><i class="far fa-calendar-alt"></i></span><?php the_date(); ?></a></li>
                                 </ul>
                             </div>
-                            <h3><a href="">Quisque sed ligula quam Fusce non massa </a></h3>
-                            <p>Xercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+                            <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <p><?php echo substr(get_the_content(), 0, 200) . " ..."; ?></p>
                             <div class="read-more-blog">
-                                <a href="">Read more</a>
+                                <a href="<?php echo get_permalink(); ?>">Read more</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 dis-flex wow fadeInRight">
-                    <div class="single-recent-post">
-                        <div class="img-hidden">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-1.jpg" alt="blog">
-                        </div>
-                        <div class="single-blog-content">
-                            <div class="single-blog-rating">
-                                <ul>
-                                    <li><a href=""><span><i class="fas fa-user"></i></span>John Doe</a></li>
-                                    <li><a href=""><span><i class="far fa-clock"></i></span>08:35 PM</a></li>
-                                    <li><a href=""><span><i class="far fa-calendar-alt"></i></span>JUL 19, 2018</a></li>
-                                </ul>
-                            </div>
-                            <h3><a href="">Barcelona Friday Design</a></h3>
-                            <p>Xercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-                            <div class="read-more-blog">
-                                <a href="">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
+        
             </div>
         </div>
     </section>

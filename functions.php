@@ -105,6 +105,17 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'edit.php?post_type=our_service',
 	));
 
+	acf_add_options_page(array(
+		'page_title' 	=> 'Clients And Reviews',
+		'menu_title'	=> 'Clients And Reviews',
+		'menu_slug' 	=> 'client',
+		'capability'	=> 'edit_posts',
+		'icon_url' => 'dashicons-universal-access',
+		'autoload' => true,
+		'redirect'		=> true
+	));
+
+
 }
 
 function bizcola_widgets_init() {

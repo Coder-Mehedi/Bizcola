@@ -1,3 +1,5 @@
+<?php require_once 'include/acf_footer_query.php';?>
+
     <!-- ================= Contact Area Start =============== -->
     <section class="contact-area section-padding">
         <div class="container">
@@ -45,7 +47,7 @@
     </section>
     <!-- ================= Contact Area End =============== -->
     <footer>
-        <p>Copyright 2019 - Bizcola | All Rights Reserved</p>
+        <p><?php echo $customize_copyright_text ? $customize_copyright_text : ''; ?></p>
     </footer>
     <?php wp_footer() ?>
     <script>
