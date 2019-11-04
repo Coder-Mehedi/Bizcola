@@ -1,53 +1,8 @@
-<?php require_once 'include/acf_query.php'; ?>
+<?php require 'include/index_acf_query.php'; ?>
+<?php get_header(); ?>
 
-<!DOCTYPE html>
-<html class="no-js" lang="la">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizCola</title>
-    <?php wp_head() ?>
-</head>
 
-<body>
-    <!-- ========= preloader area Start =========== -->
-    <div id="preloader">
-        <div class="loader">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo/loader.gif" alt="preloader">
-        </div>
-    </div>
-    <!-- ========= preloader area End =========== -->
-    <!-- ============ Header area start ============-->
-    <header class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav" role="navigation">
-                        <!-- Mobile menu toggle button (hamburger/x icon) -->
-                        <input id="main-menu-state" type="checkbox" />
-                        <label class="main-menu-btn" for="main-menu-state">
-                            <span class="main-menu-btn-icon"></span>
-                        </label>
-                        <div class="nav-brand">
-                            <a href="<?php bloginfo( 'url' ) ?>"><img src="<?php echo $theme_logo_setup['url'] ? $theme_logo_setup['url'] : ""; ?>" alt=""></a>
-                        </div>
-                        <!-- Sample menu definition -->
-
-                        <?php wp_nav_menu( array(
-                            'theme_location'  => 'menu-1',
-                            'menu_class'      => 'sm sm-clean',
-                            'menu_id'         => 'main-menu',
-                          
-                        ) ); ?>
-                        
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--========= header area end ========== -->
 <?php if($sliders): ?>
     <!-- ==========hero area start ========== -->
     <section class="hero-area">
@@ -82,50 +37,12 @@
     </section>
     <!-- ============= hero area end =========== -->
 <?php endif; ?>
-    <!-- ============= About Us Area Start =========== -->
-    <section class="about-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 wow fadeInLeft">
-                    <div class="video-area">
-                        <img src="<?php echo $about_section_video_thumbnail_image['url']; ?>" alt="Video">
-                        <a data-fancybox href="<?php echo $about_section_video_url; ?>">
-                            <div class="vi">
-                                <div class="example-1"><i class="fas fa-play"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-7 wow fadeInRight">
-                    <div class="about-heading">
-                        <h2 class="wow fadeInDown"><?php echo $about_section_title; ?></h2>
-                        <h4 class="wow fadeInUp"><?php echo $about_section_description; ?></h4>
-                        <p><?php echo $about_section_content; ?></p>
-                        <a href="<?php echo $about_section_button_text_link['url'] ?>" class="theme-btn  wow fadeInUp"><?php echo $about_section_button_text_link['title'] ?></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row ml-270">
-        <?php foreach($about_bottoms as $about_bottom): ?>
 
-                <div class="col-md-4 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="about-item">
-                        <div class="about-itm-heading">
-                            <div class="zoom">
-                                <img src="<?php echo $about_bottom['icon']['url'] ?>" alt="icon">
-                            </div>
-                            <h4><?php echo $about_bottom['title']; ?></h4>
-                        </div>
-                        <p><?php echo $about_bottom['content']; ?></p>
-                    </div>
-                </div>
-        <?php endforeach; ?>
+<!-- About Section -->
+<?php get_template_part( 'templates/about' ); ?>
 
-            </div>
-        </div>
-    </section>
 
-    <!-- ============= About Us Area End =========== -->
+    
     <?php $services_items = new WP_Query(['post_type' => 'our_service']); ?>
     <?php if ( $services_items->have_posts()): ?>
     <!-- ============= Our Services Area Start =========== -->
@@ -169,185 +86,20 @@
     </section>
     <!-- ============= Our Services Area End =========== -->
        <?php endif; ?>
-    <!-- ============= Subscribe Area Start =========== -->
-    <section class="subscribe-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2 class="wow fadeInDown"><?php echo $subscribe_section_title; ?></h2>
-                        <p class="wow fadeInUp"><?php echo $subscribe_section_description; ?></p>
-                    </div>
-                </div>
-                <div class="col-lg-8 offset-lg-2 wow bounceIn">
-                    <?php echo do_shortcode( '[contact-form-7 id="171" title="Subscribe"]' ); ?>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ============= Subscribe Area End =========== -->
-    <!-- portfolio area start -->
-    <section class="portfolio-area section-padding">
-        <div class="container" id="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3 text-center">
-                    <div class="section-heading">
-                        <h2 class="wow fadeInDown"><?php echo $recent_project_section_title ? $recent_project_section_title : ''; ?></h2>
-                        <p class="wow fadeInUp"><?php echo $recent_project_section_description ? $recent_project_section_description : ''; ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 wow fadeInDown">
-                    <div class="filtering-btn">
-                        <ul class="filter-button-group">
-                            <li class="filter-btn active-btn" data-filter="*">All</li>
-                            <li class="filter-btn" data-filter=".cat1">Air cargo</li>
-                            <li class="filter-btn" data-filter=".cat2">Sea shipping</li>
-                            <li class="filter-btn" data-filter=".cat3">Road Transport </li>
-                            <li class="filter-btn" data-filter=".cat4">Lighter ship</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row grid">
-                
-            <!-- Air Cargo -->
-        <?php if($recent_project_air_cargos): ?>
-            <?php foreach($recent_project_air_cargos as $recent_project_air_cargo): ?>
-                <div class="col-lg-5 col-md-7 grid-item cat1 wow fadeInDown">
-                    <div class="port-img">
-                        <a href="<?php echo $recent_project_air_cargo['url'] ?>" data-fancybox="images" data-caption="image 2">
-                            <img src="<?php echo $recent_project_air_cargo['url'] ?>" alt="portlio-image">
-                        </a>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
 
-        <?php if($recent_project_sea_shippings): ?>
-            <?php foreach($recent_project_sea_shippings as $recent_project_sea_shipping): ?>
+<?php get_template_part( 'templates/subscribe' ); ?>
+ 
+<?php get_template_part( 'templates/portfolio' ); ?>
 
-                <div class="col-lg-3 col-md-5 grid-item cat2 wow fadeInDown">
-                    <div class="port-img">
-                        <a href="<?php echo $recent_project_sea_shipping['url'] ?>" data-fancybox="images" data-caption="image 3">
-                            <img src="<?php echo $recent_project_sea_shipping['url']; ?>" alt="portlio-image">
-                        </a>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    <?php if($recent_project_road_transports): ?>
-        <?php foreach($recent_project_road_transports as $recent_project_road_transport): ?>    
-                
-                <div class="col-lg-4 col-md-7 grid-item cat3  wow fadeInUp">
-                    <div class="port-img">
-                        <a href="<?php echo $recent_project_road_transport['url'] ?>" data-fancybox="images" data-caption="image 6">
-                            <img src="<?php echo $recent_project_road_transport['url'] ?>" alt="portlio-image">
-                        </a>
-                    </div>
-                </div>
-
-            <?php endforeach; ?>
-        <?php endif; ?>
-
-    <?php if($recent_project_lighter_ships): ?>
-        <?php foreach($recent_project_lighter_ships as $recent_project_lighter_ship): ?> 
-
-        <div class="col-lg-5 col-md-6 grid-item cat4 wow fadeInDown">
-            <div class="port-img">
-                <a href="<?php echo $recent_project_lighter_ship['url']; ?>" data-fancybox="images" data-caption="image 1">
-                    <img src="<?php echo $recent_project_lighter_ship['url']; ?>" alt="portlio-image">
-                </a>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+<?php get_template_part( 'templates/happy_clients' ); ?>
 
 
-            </div>
-        </div>
-    </section>
-    <!-- project area end -->
-    <!-- ============= Happy Clients Area Start =========== -->
-    <section class="clients-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading wow fadeInDown">
-                        <h2><?php echo $client_and_review_section_title ? $client_and_review_section_title : ''; ?></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="clients-active owl-carousel">
-        <?php foreach($clients_and_reviews as $client_and_review): ?>
 
-                        <div class="client-item  wow fadeInUp">
-                            <div class="zoom">
-                                <img src="<?php echo $client_and_review['photo']['url'] ? $client_and_review['photo']['url'] : '' ?>" alt="client">
-                            </div>
-                            <div class="client-content">
-                                <p><?php echo $client_and_review['description'] ? $client_and_review['description'] : ''; ?></p>
 
-                                <h4><?php echo $client_and_review['name'] ? $client_and_review['name'] : 'No Name Provided' ?></h4>
-                                <h5><?php echo $client_and_review['job_field'] ? $client_and_review['job_field'] : ''; ?></h5>
-                            </div>
-                        </div>
-        <?php endforeach; ?>
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ============= SHappy Clients Area End =========== -->
     <!-- ============= Team Area Start =========== -->
-    <section class="team-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section-heading team-heading">
-                        <h2 class=" wow fadeInDown"><?php echo $team_member_section_title ? $team_member_section_title : ''; ?></h2>
-                        <p class=" wow fadeInUp"><?php echo $team_member_section_description ? $team_member_section_description : ''; ?></p>
-                        <a class="theme-btn mt-30  wow fadeInRight" href="<?php echo $team_member_section_button['url'] ? $team_member_section_button['url'] : '#'; ?>"><?php echo $team_member_section_button['title'] ? $team_member_section_button['title'] : ''; ?></a>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="row">
-            <?php foreach($members as $member): ?>
-
-                        <div class="col-md-6 wow fadeInRight">
-                            <div class="single-team">
-                                <div class="img-hidden">
-                                    <img src="<?php echo $member['photo']['url'] ? $member['photo']['url'] : ''; ?>" alt="team">
-                                </div>
-                                <div class="team-content">
-                                    <h3><?php echo $member['name'] ? $member['name'] : ''; ?></h3>
-                                    <p><?php echo $member['job'] ? $member['job'] : ''; ?></p>
-                                    <div class="team-social">
-                                        <ul>
-                                            <li><a href="<?php echo $member['fb'] ? $member['fb'] : '#'; ?>"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="<?php echo $member['twitter'] ? $member['twitter'] : '#'; ?>"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="<?php echo $member['google-plus'] ? $member['google-plus'] : '#'; ?>"><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href="<?php echo $member['website'] ? $member['website'] : '#'; ?>"><i class="fas fa-globe"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-            <?php endforeach; ?>
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php get_template_part( 'templates/team' ) ?>
     <!-- ============= Team Area End =========== -->
+
     <!-- ================= Blog  Area Start =============== -->
     <section class="recent-blog-area section-padding">
         <div class="container">

@@ -1,94 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="la">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="shortcut icon" type="image/png" href="assets/img/logo/favicon.ico">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/fancybox.min.css">
-    <link rel="stylesheet" href="assets/css/sm-clean.css">
-    <link rel="stylesheet" href="assets/css/sm-core.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
-
-<body>
-    <!-- ========= preloader area Start =========== -->
-    <div id="preloader">
-        <div class="loader">
-            <img src="assets/img/logo/loader.gif" alt="preloader">
-        </div>
-    </div>
-    <!-- ========= preloader area End =========== -->
-    <!-- ============ Header area start ============-->
-    <header class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav" role="navigation">
-                        <!-- Mobile menu toggle button (hamburger/x icon) -->
-                        <input id="main-menu-state" type="checkbox" />
-                        <label class="main-menu-btn" for="main-menu-state">
-                            <span class="main-menu-btn-icon"></span>
-                        </label>
-                        <div class="nav-brand">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                        </div>
-                        <!-- Sample menu definition -->
-                        <ul id="main-menu" class="sm sm-clean">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active"><a href="about.html">About</a></li>
-                            <li><a href="service.html">Services</a>
-                                <ul>
-                                    <li><a href="">Sub menu 1 </a></li>
-                                    <li><a href="">Sub menu 2 </a></li>
-                                    <li><a href="">Sub menu 3 </a>
-                                        <ul>
-                                            <li><a href="">Sub menu 6 </a></li>
-                                            <li><a href="">Sub menu 7 </a></li>
-                                            <li><a href="">Sub menu 8 </a></li>
-                                            <li><a href="">Sub menu 9 </a>
-                                                <ul>
-                                                    <li><a href="">Sub menu 11 </a>
-                                                        <ul>
-                                                            <li><a href="">Sub menu 16 </a></li>
-                                                            <li><a href="">Sub menu 17 </a></li>
-                                                            <li><a href="">Sub menu 18 </a></li>
-                                                            <li><a href="">Sub menu 19 </a></li>
-                                                            <li><a href="">Sub menu 20 </a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="">Sub menu 12 </a></li>
-                                                    <li><a href="">Sub menu 13 </a></li>
-                                                    <li><a href="">Sub menu 14 </a></li>
-                                                    <li><a href="">Sub menu 15 </a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="">Sub menu 10 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Sub menu 4 </a></li>
-                                    <li><a href="">Sub menu 5 </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--========= header area end ========== -->
+<?php get_header( ); ?>
     <!-- ==========Page area start ========== -->
     <div class="page-area">
         <div class="container">
@@ -113,7 +23,7 @@
             <div class="row">
                 <div class="col-lg-5 wow fadeInLeft">
                     <div class="video-area">
-                        <img src="assets/img/about/video-1.jpg" alt="Video">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/about/video-1.jpg" alt="Video">
                         <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
                             <div class="vi">
                                 <div class="example-1"><i class="fas fa-play"></i></div>
@@ -136,7 +46,7 @@
                     <div class="about-item">
                         <div class="about-itm-heading">
                             <div class="zoom">
-                                <img src="assets/img/icon/about-icon-1.png" alt="icon">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/about-icon-1.png" alt="icon">
                             </div>
                             <h4>Maesuada risus</h4>
                         </div>
@@ -147,7 +57,7 @@
                     <div class="about-item">
                         <div class="about-itm-heading">
                             <div class="zoom">
-                                <img src="assets/img/icon/about-icon-2.png" alt="icon">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/about-icon-2.png" alt="icon">
                             </div>
                             <h4>Lorem ipsum do</h4>
                         </div>
@@ -158,7 +68,7 @@
                     <div class="about-item">
                         <div class="about-itm-heading">
                             <div class="zoom">
-                                <img src="assets/img/icon/about-icon-3.png" alt="icon">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon/about-icon-3.png" alt="icon">
                             </div>
                             <h4>Maesuada risus</h4>
                         </div>
@@ -187,7 +97,7 @@
                         <div class="col-md-6 wow fadeInRight">
                             <div class="single-team">
                                 <div class="img-hidden">
-                                    <img src="assets/img/team/team-1.jpg" alt="team">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-1.jpg" alt="team">
                                 </div>
                                 <div class="team-content">
                                     <h3>Poppy Byrne</h3>
@@ -206,7 +116,7 @@
                         <div class="col-md-6 wow fadeInLeft">
                             <div class="single-team">
                                 <div class="img-hidden">
-                                    <img src="assets/img/team/team-2.jpg" alt="team">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-2.jpg" alt="team">
                                 </div>
                                 <div class="team-content">
                                     <h3>Isaac Miah</h3>
@@ -225,7 +135,7 @@
                         <div class="col-md-6  wow fadeInRight">
                             <div class="single-team">
                                 <div class="img-hidden">
-                                    <img src="assets/img/team/team-3.jpg" alt="team">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-3.jpg" alt="team">
                                 </div>
                                 <div class="team-content">
                                     <h3>Riley Cook</h3>
@@ -244,7 +154,7 @@
                         <div class="col-md-6">
                             <div class="single-team  wow fadeInLeft">
                                 <div class="img-hidden">
-                                    <img src="assets/img/team/team-4.jpg" alt="team">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-4.jpg" alt="team">
                                 </div>
                                 <div class="team-content">
                                     <h3>Aimee Howe</h3>
@@ -306,7 +216,7 @@
                     <div class="clients-active owl-carousel">
                         <div class="client-item  wow fadeInUp">
                             <div class="zoom">
-                                <img src="assets/img/client/client-1.jpg" alt="client">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
                             </div>
                             <div class="client-content">
                                 <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
@@ -316,7 +226,7 @@
                         </div>
                         <div class="client-item  wow fadeInUp">
                             <div class="zoom">
-                                <img src="assets/img/client/client-1.jpg" alt="client">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
                             </div>
                             <div class="client-content">
                                 <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
@@ -326,7 +236,7 @@
                         </div>
                         <div class="client-item  wow fadeInUp">
                             <div class="zoom">
-                                <img src="assets/img/client/client-1.jpg" alt="client">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
                             </div>
                             <div class="client-content">
                                 <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
@@ -336,7 +246,7 @@
                         </div>
                         <div class="client-item wow fadeInUp">
                             <div class="zoom">
-                                <img src="assets/img/client/client-1.jpg" alt="client">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/client/client-1.jpg" alt="client">
                             </div>
                             <div class="client-content">
                                 <p>Etiam eget libero sit amet elit aliquet imperdiet sed id velit. Morbi at elit non risus rutrum interdum. Cras vitae neque non lorem pellentesque facilisis. Risus get vulputate porttitor, tortor turpis porta justo.</p>
@@ -383,22 +293,22 @@
                 <div class="col-12  wow fadeInDown">
                     <div class="photo-gallery owl-carousel">
                         <div class="photo-item">
-                            <img src="assets/img/gallery/gallery-1.jpg" alt="portlio-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery/gallery-1.jpg" alt="portlio-image">
                         </div>
                         <div class="photo-item">
-                            <img src="assets/img/gallery/gallery-2.jpg" alt="portlio-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery/gallery-2.jpg" alt="portlio-image">
                         </div>
                         <div class="photo-item">
-                            <img src="assets/img/gallery/gallery-3.jpg" alt="portlio-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery/gallery-3.jpg" alt="portlio-image">
                         </div>
                         <div class="photo-item">
-                            <img src="assets/img/gallery/gallery-1.jpg" alt="portlio-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery/gallery-1.jpg" alt="portlio-image">
                         </div>
                         <div class="photo-item">
-                            <img src="assets/img/gallery/gallery-2.jpg" alt="portlio-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery/gallery-2.jpg" alt="portlio-image">
                         </div>
                         <div class="photo-item">
-                            <img src="assets/img/gallery/gallery-3.jpg" alt="portlio-image">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/gallery/gallery-3.jpg" alt="portlio-image">
                         </div>
                     </div>
                 </div>
@@ -406,67 +316,4 @@
         </div>
     </section>
     <!-- ============= pop video Clients Area End =========== -->
-
-    <!-- ================= Contact Area Start =============== -->
-    <section class="contact-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 wow fadeInRight">
-                    <div class="contact-content">
-                        <h4>Contact Info:</h4>
-                        <p>Praesent interdum congue mauris, et fringilla lacus pel vitae. Quisque nisl mauris, aliquam eu ultrices vel, conse vitae sapien at imperdiet risus. Quisque cursus risus id. fermentum, in auctor quam consectetur.</p>
-                        <h6><span>Address:</span>10111 Santa Monica Boulevard, LA</h6>
-                        <h6><span>Phone:</span>+44 987 065 908</h6>
-                        <h6><span>Email:</span>info@Example.com</h6>
-                        <h6><span>Fax:</span>+44 987 065 909</h6>
-                        <div class="footer-socail">
-                            <ul>
-                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href=""><i class="fas fa-globe"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1 wow fadeInLeft">
-                    <div class="contact-form">
-                        <form action="">
-                            <div class="input">
-                                <input type="text" name="name" placeholder="Your Name">
-                            </div>
-                            <div class="input">
-                                <input type="email" name="email" placeholder="Your Email">
-                            </div>
-                            <div class="input">
-                                <input type="text" name="title" placeholder="Your Title">
-                            </div>
-                            <div class="input">
-                                <textarea name="comment" id="text-area" cols="30" rows="6" placeholder="Your Comment"></textarea>
-                            </div>
-                            <button class="submit theme-btn  wow fadeInUp">send message</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ================= Contact Area End =============== -->
-    <footer>
-        <p>Copyright 2019 - Bizcola | All Rights Reserved</p>
-    </footer>
-
-    <!-- ========== Footer Area End ============-->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/fancybox.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/smartmenus.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+<?php get_footer(); ?>
