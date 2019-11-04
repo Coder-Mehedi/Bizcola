@@ -642,7 +642,7 @@ background: url(../img/bg/page-bg.jpg);
     position: relative;
 }
 
-.subscribe-input > input {
+.subscribe-input input[type='email'] {
     border: medium none;
     border-radius: 30px;
     padding: 15px 10px 13px 30px;
@@ -659,6 +659,7 @@ background: url(../img/bg/page-bg.jpg);
     padding: 10px 28px;
     position: absolute;
     right: 4px;
+    top: 0;
 }
 
 /*================= 1.5 Subscribe Area End ==============*/

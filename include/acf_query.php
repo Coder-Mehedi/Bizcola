@@ -2,6 +2,16 @@
 
 
 if(function_exists('acf_add_local_field_group')){
+// Header Section
+if( have_rows('global_setting_group','option') ): 
+    while( have_rows('global_setting_group','option') ): the_row();
+        
+        $theme_logo_setup = get_sub_field('theme_logo_setup');
+
+    endwhile;
+endif;
+
+
 // Banner Section
 if( have_rows('banner_button_settings','option') ): 
     while( have_rows('banner_button_settings','option') ): the_row();
@@ -58,12 +68,6 @@ if( have_rows('about_section_group','option') ):
             endwhile;
         endif;
 
-        if( have_rows('about_section_button_settings','option') ): 
-            while( have_rows('about_section_button_settings','option') ): the_row();
-                $about_section_button_text_link = get_sub_field('about_section_button_text_link');
-                $about_section_button_background = get_sub_field('about_section_button_background');
-            endwhile;
-        endif;
 
         if( have_rows('about_bottom_group','option') ): 
             while( have_rows('about_bottom_group','option') ): the_row();
@@ -97,6 +101,10 @@ if( have_rows('subscribe_section_group','option') ):
 endif;
 
 // Recent Projects
+$recent_project_section_title = get_field('recent_project_section_title', 'option');
+$recent_project_section_description = get_field('recent_project_section_description', 'option');
+
+
 if( have_rows('recent_project','option') ): 
     while( have_rows('recent_project','option') ): the_row();
         
@@ -107,6 +115,34 @@ if( have_rows('recent_project','option') ):
 
     endwhile;
 endif;
+
+
+
+
+// Team Member Section
+
+$team_member_section_title = get_field('team_member_section_title', 'option');
+$team_member_section_description = get_field('team_member_section_description', 'option');
+$team_member_section_button = get_field('team_member_section_button', 'option');
+
+
+if( have_rows('team_members_section','option') ): 
+    while( have_rows('team_members_section','option') ): the_row();
+        
+        $members[] = [
+        'photo' => $members_photo[] = get_sub_field('member_photo'),
+        'name' => $members_names[] = get_sub_field('member_name'),
+        'job' => $member_job_fields[] = get_sub_field('member_job_field'),
+
+        'fb' => $members_facebook_profile_link[] = get_sub_field('member_facebook_profile_link'),
+        'twitter' => $members_twitter_profile_link[] = get_sub_field('member_twitter_profile_link'),
+        'google-plus' => $members_google_plus_profile_link[] = get_sub_field('member_google_plus_profile_link'),
+        'website' => $member_website[] = get_sub_field('member_website')
+    ];
+
+    endwhile;
+endif;
+
 
 
 
@@ -136,6 +172,9 @@ if( have_rows('our_recent_blog_section_group','option') ):
 
     endwhile;
 endif;
+
+
+
 
 
 

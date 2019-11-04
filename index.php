@@ -31,7 +31,7 @@
                             <span class="main-menu-btn-icon"></span>
                         </label>
                         <div class="nav-brand">
-                            <a href="index.html"><img src="<?php echo get_template_directory_uri() ?>/assets/img/logo/logo.png" alt=""></a>
+                            <a href="<?php bloginfo( 'url' ) ?>"><img src="<?php echo $theme_logo_setup['url'] ? $theme_logo_setup['url'] : ""; ?>" alt=""></a>
                         </div>
                         <!-- Sample menu definition -->
 
@@ -180,12 +180,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-2 wow bounceIn">
-                    <form action="">
-                        <div class="subscribe-input">
-                            <input type="email" placeholder="Enter Your Email Here">
-                            <button class="sub theme-btn"><?php echo $subscribe_button_link['title'] ? $subscribe_button_link['title'] : ''; ?></button>
-                        </div>
-                    </form>
+                    <?php echo do_shortcode( '[contact-form-7 id="171" title="Subscribe"]' ); ?>
                 </div>
             </div>
         </div>
@@ -197,8 +192,8 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 text-center">
                     <div class="section-heading">
-                        <h2 class="wow fadeInDown">Recent Projects</h2>
-                        <p class="wow fadeInUp">Etiam id augue sollicitudin ex ultrices accumsan id eget urna. Duis ut vestibulum arcu. Ut congue facilisis nulla.</p>
+                        <h2 class="wow fadeInDown"><?php echo $recent_project_section_title ? $recent_project_section_title : ''; ?></h2>
+                        <p class="wow fadeInUp"><?php echo $recent_project_section_description ? $recent_project_section_description : ''; ?></p>
                     </div>
                 </div>
             </div>
@@ -233,7 +228,7 @@
         <?php if($recent_project_sea_shippings): ?>
             <?php foreach($recent_project_sea_shippings as $recent_project_sea_shipping): ?>
 
-                <div class="col-lg-3 col-md-5 grid-item cat2 cat3  wow fadeInDown">
+                <div class="col-lg-3 col-md-5 grid-item cat2 wow fadeInDown">
                     <div class="port-img">
                         <a href="<?php echo $recent_project_sea_shipping['url'] ?>" data-fancybox="images" data-caption="image 3">
                             <img src="<?php echo $recent_project_sea_shipping['url']; ?>" alt="portlio-image">
@@ -315,90 +310,38 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="section-heading team-heading">
-                        <h2 class=" wow fadeInDown">Meet Our Super Talented Team</h2>
-                        <p class=" wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-                        <a class="theme-btn mt-30  wow fadeInRight" href="">Read more</a>
+                        <h2 class=" wow fadeInDown"><?php echo $team_member_section_title ? $team_member_section_title : ''; ?></h2>
+                        <p class=" wow fadeInUp"><?php echo $team_member_section_description ? $team_member_section_description : ''; ?></p>
+                        <a class="theme-btn mt-30  wow fadeInRight" href="<?php echo $team_member_section_button['url'] ? $team_member_section_button['url'] : '#'; ?>"><?php echo $team_member_section_button['title'] ? $team_member_section_button['title'] : ''; ?></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="row">
+            <?php foreach($members as $member): ?>
+
                         <div class="col-md-6 wow fadeInRight">
                             <div class="single-team">
                                 <div class="img-hidden">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-1.jpg" alt="team">
+                                    <img src="<?php echo $member['photo']['url'] ? $member['photo']['url'] : ''; ?>" alt="team">
                                 </div>
                                 <div class="team-content">
-                                    <h3>Poppy Byrne</h3>
-                                    <p>Marketer</p>
+                                    <h3><?php echo $member['name'] ? $member['name'] : ''; ?></h3>
+                                    <p><?php echo $member['job'] ? $member['job'] : ''; ?></p>
                                     <div class="team-social">
                                         <ul>
-                                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href=""><i class="fas fa-globe"></i></a></li>
+                                            <li><a href="<?php echo $member['fb'] ? $member['fb'] : '#'; ?>"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="<?php echo $member['twitter'] ? $member['twitter'] : '#'; ?>"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="<?php echo $member['google-plus'] ? $member['google-plus'] : '#'; ?>"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="<?php echo $member['website'] ? $member['website'] : '#'; ?>"><i class="fas fa-globe"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 wow fadeInLeft">
-                            <div class="single-team">
-                                <div class="img-hidden">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-2.jpg" alt="team">
-                                </div>
-                                <div class="team-content">
-                                    <h3>Isaac Miah</h3>
-                                    <p>Developer</p>
-                                    <div class="team-social">
-                                        <ul>
-                                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href=""><i class="fas fa-globe"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6  wow fadeInRight">
-                            <div class="single-team">
-                                <div class="img-hidden">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-3.jpg" alt="team">
-                                </div>
-                                <div class="team-content">
-                                    <h3>Riley Cook</h3>
-                                    <p>Director</p>
-                                    <div class="team-social">
-                                        <ul>
-                                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href=""><i class="fas fa-globe"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="single-team  wow fadeInLeft">
-                                <div class="img-hidden">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/team/team-4.jpg" alt="team">
-                                </div>
-                                <div class="team-content">
-                                    <h3>Aimee Howe</h3>
-                                    <p>Designer</p>
-                                    <div class="team-social">
-                                        <ul>
-                                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href=""><i class="fas fa-globe"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+            <?php endforeach; ?>
+                        
+
                     </div>
                 </div>
             </div>
