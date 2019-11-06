@@ -19,6 +19,7 @@ function hook_css() { ?>
 			.page-area {
 			    background: url("<?php echo get_template_directory_uri() ?>/assets/img/bg/page-bg.jpg");
 			}
+		</style>
     <?php
 }
 add_action('wp_head', 'hook_css');

@@ -93,12 +93,7 @@
 
 <?php get_template_part( 'templates/happy_clients' ); ?>
 
-
-
-
-    <!-- ============= Team Area Start =========== -->
-    <?php get_template_part( 'templates/team' ) ?>
-    <!-- ============= Team Area End =========== -->
+<?php get_template_part( 'templates/team' ) ?>
 
     <!-- ================= Blog  Area Start =============== -->
     <section class="recent-blog-area section-padding">

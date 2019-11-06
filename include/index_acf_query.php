@@ -7,7 +7,7 @@ if( have_rows('global_setting_group','option') ):
     while( have_rows('global_setting_group','option') ): the_row();
         
         $theme_logo_setup = get_sub_field('theme_logo_setup');
-
+        $you_want_service_section = get_sub_field('you_want_service_section');
     endwhile;
 endif;
 
@@ -52,7 +52,6 @@ if( have_rows('our_recent_blog_section_group','option') ):
 
     endwhile;
 endif;
-
 
 
 
