@@ -1,94 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="la">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="shortcut icon" type="image/png" href="assets/img/logo/favicon.ico">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/fancybox.min.css">
-    <link rel="stylesheet" href="assets/css/sm-clean.css">
-    <link rel="stylesheet" href="assets/css/sm-core.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
-
-<body>
-    <!-- ========= preloader area Start =========== -->
-    <div id="preloader">
-        <div class="loader">
-            <img src="assets/img/logo/loader.gif" alt="preloader">
-        </div>
-    </div>
-    <!-- ========= preloader area End =========== -->
-    <!-- ============ Header area start ============-->
-    <header class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav" role="navigation">
-                        <!-- Mobile menu toggle button (hamburger/x icon) -->
-                        <input id="main-menu-state" type="checkbox" />
-                        <label class="main-menu-btn" for="main-menu-state">
-                            <span class="main-menu-btn-icon"></span>
-                        </label>
-                        <div class="nav-brand">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                        </div>
-                        <!-- Sample menu definition -->
-                        <ul id="main-menu" class="sm sm-clean">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="service.html">Services</a>
-                                <ul>
-                                    <li><a href="">Sub menu 1 </a></li>
-                                    <li><a href="">Sub menu 2 </a></li>
-                                    <li><a href="">Sub menu 3 </a>
-                                        <ul>
-                                            <li><a href="">Sub menu 6 </a></li>
-                                            <li><a href="">Sub menu 7 </a></li>
-                                            <li><a href="">Sub menu 8 </a></li>
-                                            <li><a href="">Sub menu 9 </a>
-                                                <ul>
-                                                    <li><a href="">Sub menu 11 </a>
-                                                        <ul>
-                                                            <li><a href="">Sub menu 16 </a></li>
-                                                            <li><a href="">Sub menu 17 </a></li>
-                                                            <li><a href="">Sub menu 18 </a></li>
-                                                            <li><a href="">Sub menu 19 </a></li>
-                                                            <li><a href="">Sub menu 20 </a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="">Sub menu 12 </a></li>
-                                                    <li><a href="">Sub menu 13 </a></li>
-                                                    <li><a href="">Sub menu 14 </a></li>
-                                                    <li><a href="">Sub menu 15 </a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="">Sub menu 10 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Sub menu 4 </a></li>
-                                    <li><a href="">Sub menu 5 </a></li>
-                                </ul>
-                            </li>
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li class="active"><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--========= header area end ========== -->
+<?php get_header(); ?>
     <!-- ==========Page area start ========== -->
     <div class="page-area">
         <div class="container">
@@ -117,7 +27,7 @@
                         <div class="user-option wow fadeInUp">
                             <a href="">
                                 <div class="user">
-                                    <h6><img src="assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
+                                    <h6><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
                                     <p>Britton Frost</p>
                                 </div>
                             </a>
@@ -130,7 +40,7 @@
                         </div>
                         <div class="blog-de-post">
                             <div class="zoom  wow fadeInUp">
-                                <img src="assets/img/blog/blog-3.jpg" alt="blog">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-3.jpg" alt="blog">
                             </div>
                             <div class="post-tag  wow fadeInUp">
                                 <ul>
@@ -149,7 +59,7 @@
                         <div class="user-option wow fadeInUp">
                             <a href="">
                                 <div class="user">
-                                    <h6><img src="assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
+                                    <h6><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
                                     <p>Britton Frost</p>
                                 </div>
                             </a>
@@ -162,7 +72,7 @@
                         </div>
                         <div class="blog-de-post">
                             <div class="zoom  wow fadeInUp">
-                                <img src="assets/img/blog/blog-4.jpg" alt="blog">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-4.jpg" alt="blog">
                             </div>
                             <div class="post-tag  wow fadeInUp">
                                 <ul>
@@ -181,7 +91,7 @@
                         <div class="user-option wow fadeInUp">
                             <a href="">
                                 <div class="user">
-                                    <h6><img src="assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
+                                    <h6><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
                                     <p>Britton Frost</p>
                                 </div>
                             </a>
@@ -194,7 +104,7 @@
                         </div>
                         <div class="blog-de-post">
                             <div class="zoom  wow fadeInUp">
-                                <img src="assets/img/blog/blog-5.jpg" alt="blog">
+                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-5.jpg" alt="blog">
                             </div>
                             <div class="post-tag  wow fadeInUp">
                                 <ul>
@@ -232,7 +142,7 @@
                                     </div>
                                     <div class="popular-post-img">
                                         <div class="zoom">
-                                            <img src="assets/img/blog-details/popular-post-1.jpg" alt="popular-post-1">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-1.jpg" alt="popular-post-1">
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +155,7 @@
                                     </div>
                                     <div class="popular-post-img">
                                         <div class="zoom">
-                                            <img src="assets/img/blog-details/popular-post-2.jpg" alt="popular-post-2">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-2.jpg" alt="popular-post-2">
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +168,7 @@
                                     </div>
                                     <div class="popular-post-img">
                                         <div class="zoom">
-                                            <img src="assets/img/blog-details/popular-post-3.jpg" alt="popular-post-3">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-3.jpg" alt="popular-post-3">
                                         </div>
                                     </div>
                                 </div>
@@ -271,7 +181,7 @@
                                     </div>
                                     <div class="popular-post-img">
                                         <div class="zoom">
-                                            <img src="assets/img/blog-details/popular-post-4.jpg" alt="popular-post-4">
+                                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-4.jpg" alt="popular-post-4">
                                         </div>
                                     </div>
                                 </div>
@@ -321,21 +231,21 @@
                         <div class="sm-post">
                             <a href="" class="sm-post-items  wow fadeInUp">
                                 <div class="zoom">
-                                    <img src="assets/img/blog-details/popular-post-5.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-5.jpg" alt="">
                                 </div>
                                 <p>Check Out New Trendy Smart
                                     Phones in Next Decade</p>
                             </a>
                             <a href="" class="sm-post-items  wow fadeInUp">
                                 <div class="zoom">
-                                    <img src="assets/img/blog-details/popular-post-6.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-6.jpg" alt="">
                                 </div>
                                 <p>Check Out New Trendy Smart
                                     Phones in Next Decade</p>
                             </a>
                             <a href="" class="sm-post-items  wow fadeInUp">
                                 <div class="zoom">
-                                    <img src="assets/img/blog-details/popular-post-7.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-7.jpg" alt="">
                                 </div>
                                 <p>Check Out New Trendy Smart
                                     Phones in Next Decade</p>
@@ -347,66 +257,4 @@
         </div>
     </section>
     <!-- *************** Blog Details  End *************** -->
-    <!-- ================= Contact Area Start =============== -->
-    <section class="contact-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 wow fadeInRight">
-                    <div class="contact-content">
-                        <h4>Contact Info:</h4>
-                        <p>Praesent interdum congue mauris, et fringilla lacus pel vitae. Quisque nisl mauris, aliquam eu ultrices vel, conse vitae sapien at imperdiet risus. Quisque cursus risus id. fermentum, in auctor quam consectetur.</p>
-                        <h6><span>Address:</span>10111 Santa Monica Boulevard, LA</h6>
-                        <h6><span>Phone:</span>+44 987 065 908</h6>
-                        <h6><span>Email:</span>info@Example.com</h6>
-                        <h6><span>Fax:</span>+44 987 065 909</h6>
-                        <div class="footer-socail">
-                            <ul>
-                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href=""><i class="fas fa-globe"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1 wow fadeInLeft">
-                    <div class="contact-form">
-                        <form action="">
-                            <div class="input">
-                                <input type="text" name="name" placeholder="Your Name">
-                            </div>
-                            <div class="input">
-                                <input type="email" name="email" placeholder="Your Email">
-                            </div>
-                            <div class="input">
-                                <input type="text" name="title" placeholder="Your Title">
-                            </div>
-                            <div class="input">
-                                <textarea name="comment" id="text-area" cols="30" rows="6" placeholder="Your Comment"></textarea>
-                            </div>
-                            <button class="submit theme-btn  wow fadeInUp">send message</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ================= Contact Area End =============== -->
-    <footer>
-        <p>Copyright 2019 - Bizcola | All Rights Reserved</p>
-    </footer>
-
-    <!-- ========== Footer Area End ============-->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/fancybox.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/smartmenus.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+<?php get_footer(); ?>

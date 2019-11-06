@@ -95,6 +95,13 @@
 
 <?php get_template_part( 'templates/team' ) ?>
 
+<?php $blog_posts  = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 2
+                ));
+            ?>
+
+
     <!-- ================= Blog  Area Start =============== -->
     <section class="recent-blog-area section-padding">
         <div class="container">
@@ -107,8 +114,8 @@
                 </div>
             </div>
             <div class="row">
-        <?php if (have_posts()):
-                while ( have_posts() ): the_post(); ?>
+<?php if ( $blog_posts->have_posts() ):
+    while ( $blog_posts->have_posts() ): $blog_posts->the_post();?>
             
                 <div class="col-md-6 dis-flex wow fadeInLeft">
                     <div class="single-recent-post">

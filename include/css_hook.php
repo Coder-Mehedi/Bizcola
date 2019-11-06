@@ -19,6 +19,9 @@ function hook_css() { ?>
 			.page-area {
 			    background: url("<?php echo get_template_directory_uri() ?>/assets/img/bg/page-bg.jpg");
 			}
+			.service-bg-area::after {
+				background: url("<?php echo get_template_directory_uri() ?>/assets/img/bg/service-bg-1.jpg");
+			}
 		</style>
     <?php
 }
