@@ -122,7 +122,7 @@ if ($tags) {
     $args=array(
         'tag__in' => array($first_tag),
         'post__not_in' => array($post->ID),
-        'posts_per_page'=>5,
+        'posts_per_page'=>2,
         'ignore_sticky_posts'=>1
     );
     $my_query = new WP_Query($args);

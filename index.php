@@ -1,8 +1,6 @@
 <?php require 'include/index_acf_query.php'; ?>
 <?php get_header(); ?>
 
-
-
 <?php if($sliders): ?>
     <!-- ==========hero area start ========== -->
     <section class="hero-area">

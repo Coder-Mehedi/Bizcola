@@ -34,13 +34,13 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url' => 'dashicons-admin-users'
 	));
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'Recent Projects',
-		'menu_title'	=> 'Recent Projects',
-		'menu_slug' 	=> 'recent-projects',
-		'capability'	=> 'edit_posts',
-		'icon_url' => 'dashicons-schedule'
-	));
+	// acf_add_options_page(array(
+	// 	'page_title' 	=> 'Recent Projects',
+	// 	'menu_title'	=> 'Recent Projects',
+	// 	'menu_slug' 	=> 'recent-projects',
+	// 	'capability'	=> 'edit_posts',
+	// 	'icon_url' => 'dashicons-schedule'
+	// ));
 
 	acf_add_options_page(array(
 		'page_title' 	=> 'Contact Info',
