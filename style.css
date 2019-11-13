@@ -1521,7 +1521,7 @@ a .user i {
     margin-top: 70px
 }
 
-.pagination a {
+.pagination a, .pagination span {
     color: #ffffff;
     display: block;
     height: 35px;
@@ -1541,8 +1541,8 @@ a .user i {
 }
 
 .pagination span {
-    font-size: 12px;
-    line-height: 0;
+    background: black;
+    color: red;
 }
 
 /*~**** pagination  Start ***~*/

@@ -1,132 +1,61 @@
 <?php get_header(); ?>
-    <!-- ==========Page area start ========== -->
-    <div class="page-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-content">
-                        <h2>Our Blog Posts</h2>
-                        <ul>
-                            <li><a href="">Home - </a></li>
-                            <li class="active"><a href="">Blog</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============= Page area end =========== -->
+    <?php get_template_part( 'templates/page_top_header' ); ?>
     <!-- *************** Blog Details Start *************** -->
     <section class="blog-page section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="blog-page-content">
-                        <h3 class="wow fadeInDown">Lorem ipsum dolor sit amet</h3>
-                        <div class="user-option wow fadeInUp">
-                            <a href="">
-                                <div class="user">
-                                    <h6><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
-                                    <p>Britton Frost</p>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="user">
-                                    <h6><i class="fas fa-calendar-alt"></i></h6>
-                                    <p>December 29, 2018</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="blog-de-post">
-                            <div class="zoom  wow fadeInUp">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-3.jpg" alt="blog">
-                            </div>
-                            <div class="post-tag  wow fadeInUp">
-                                <ul>
-                                    <li><a href="">LIDAYHO</a></li>
-                                    <li><a href="">PIPS</a></li>
-                                    <li><a href="">AVELTR</a></li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <a class="theme-btn mt-30" href="blog-details.html">Read more</a>
-                        </div>
+<?php if (have_posts() ):
+
+    while (have_posts() ): the_post();?>
+
+        <div class="blog-page-content mt-70">
+            <h3 class="wow fadeInDown"><?php the_title(); ?></h3>
+            <div class="user-option wow fadeInUp">
+                <a href="">
+                    <div class="user">
+                        <h6><?php echo get_avatar( get_the_author_meta('ID'), 40) ?></h6>
+                        <p><?php echo get_the_author_meta('display_name') ?></p>
                     </div>
-                    <div class="blog-page-content mt-70">
-                        <h3 class="wow fadeInDown">Lorem ipsum dolor sit amet</h3>
-                        <div class="user-option wow fadeInUp">
-                            <a href="">
-                                <div class="user">
-                                    <h6><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
-                                    <p>Britton Frost</p>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="user">
-                                    <h6><i class="fas fa-calendar-alt"></i></h6>
-                                    <p>December 29, 2018</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="blog-de-post">
-                            <div class="zoom  wow fadeInUp">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-4.jpg" alt="blog">
-                            </div>
-                            <div class="post-tag  wow fadeInUp">
-                                <ul>
-                                    <li><a href="">LIDAYHO</a></li>
-                                    <li><a href="">PIPS</a></li>
-                                    <li><a href="">AVELTR</a></li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <a class="theme-btn mt-30" href="blog-details.html">Read more</a>
-                        </div>
+                </a>
+                <a href="">
+                    <div class="user">
+                        <h6><i class="fas fa-calendar-alt"></i></h6>
+                        <p><?php echo get_the_date( ); ?></p>
                     </div>
-                    <div class="blog-page-content mt-70">
-                        <h3 class="wow fadeInDown">Lorem ipsum dolor sit amet</h3>
-                        <div class="user-option wow fadeInUp">
-                            <a href="">
-                                <div class="user">
-                                    <h6><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/user-1.jpg" alt="tag"> </h6>
-                                    <p>Britton Frost</p>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="user">
-                                    <h6><i class="fas fa-calendar-alt"></i></h6>
-                                    <p>December 29, 2018</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="blog-de-post">
-                            <div class="zoom  wow fadeInUp">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog/blog-5.jpg" alt="blog">
-                            </div>
-                            <div class="post-tag  wow fadeInUp">
-                                <ul>
-                                    <li><a href="">LIDAYHO</a></li>
-                                    <li><a href="">PIPS</a></li>
-                                    <li><a href="">AVELTR</a></li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <a class="theme-btn mt-30" href="blog-details.html">Read more</a>
-                        </div>
-                    </div>
+                </a>
+            </div>
+            <div class="blog-de-post">
+                <div class="zoom  wow fadeInUp">
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="blog">
+                </div>
+                <div class="post-tag  wow fadeInUp">
+                    <?php $tag_list = get_the_tags() ? get_the_tags() : []?>
+                    <ul>
+                    <?php foreach($tag_list as $tag): ?>
+                        <li><a href="?tag=<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+                    <?php endforeach; ?>
+                    </ul>
+                    
+                </div>
+                <p><?php echo substr(get_the_content(), 0, 200); ?></p>
+                <a class="theme-btn mt-30" href="<?php the_permalink(); ?>">Read more</a>
+            </div>
+        </div>
+        <?php endwhile; ?>
+
+    
+
                     <div class="pagination">
-                        <ul>
-                            <li><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href=""><span>&#9679; &#9679; &#9679;</span></a></li>
-                            <li><a href=""><i class="fas fa-angle-double-right"></i></a></li>
-                        </ul>
+    <?php $pagi_args = array('prev_text' => '<<', 'next_text' => '>>' ); ?>
+    <?php echo paginate_links($pagi_args); 
+    
+
+    ?>
+
                     </div>
+    <?php endif; ?>
+    
                 </div>
 
 
