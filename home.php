@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-    <?php get_template_part( 'templates/page_top_header' ); ?>
+<?php $follow_us_widget_id = 'widget_follow_us_widget-2' ?>
+<?php get_template_part( 'templates/page_top_header' ); ?>
     <!-- *************** Blog Details Start *************** -->
     <section class="blog-page section-padding">
         <div class="container">
@@ -117,7 +118,7 @@
                             </a>
                         </div>
                         <div class="follow-us">
-                            <h4 class=" wow fadeInUp">Follow Us</h4>
+                            <h4 class=" wow fadeInUp"><?php the_field('follow_us_title', $follow_us_widget_id); ?></h4>
                             <div class="footer-follow wow fadeInUp">
                                 <p>
                                     Save my name, email, and website in this browser for the next time I comment.

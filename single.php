@@ -1,23 +1,5 @@
 <?php get_header( ); ?>
-    <!-- ==========Page area start ========== -->
-    <div class="page-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-content">
-                        <h2><?php the_title( ); ?></h2>
-                        <ul>
-                            <li><a href="index.html">Home - </a></li>
-                            <li><a href="blog.html">Blog - </a></li>
-                            <li class="active"><a href="blog-details.html">Blog Detail</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============= Page area end =========== -->
+    <?php get_template_part( 'templates/page_top_header' ); ?>
 
     <!-- *************** Blog Details Start *************** -->
     <?php if (have_posts()):

@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row grid">
-<?php $query = new WP_Query( array('post_type' => 'portfolio'));
+<?php $query = new WP_Query( array('post_type' => 'portfolio','posts_per_page' => -1));
 
 // The Loop
 if ( $query->have_posts() ):

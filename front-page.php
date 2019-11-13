@@ -1,5 +1,8 @@
 <?php require 'include/index_acf_query.php'; ?>
+
 <?php get_header(); ?>
+
+
 
 <?php if($sliders): ?>
     <!-- ==========hero area start ========== -->
@@ -129,7 +132,7 @@
                                 </ul>
                             </div>
                             <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <p><?php echo substr(get_the_content(), 0, 200) . " ..."; ?></p>
+                            <p><?php echo substr(get_the_excerpt(), 0, 150) ."..."; ?></p>
                             <div class="read-more-blog">
                                 <a href="<?php echo get_permalink(); ?>">Read more</a>
                             </div>
@@ -146,3 +149,8 @@
 
     <!-- ================= Blog  Area End =============== -->
 <?php get_footer(); ?>
+
+<?php
+// $sidebars_widgets = get_option('sidebars_widgets');
+// print_r($sidebars_widgets);
+?>
