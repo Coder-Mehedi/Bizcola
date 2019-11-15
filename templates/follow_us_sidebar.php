@@ -9,9 +9,11 @@
         <?php the_field('follow_us_description', 'widget_follow_us_widget-2'); ?>
         </p>
 
+<?php if($socials): ?>
     <?php foreach($socials as $social): ?>
         <a href="<?php echo $social['account_profile_url'] ?>"><?php echo $social['add_social_accounts']; ?></a>
     <?php endforeach; ?>
+<?php endif; ?>
 
     </div>
     <h4 class=" wow fadeInUp">

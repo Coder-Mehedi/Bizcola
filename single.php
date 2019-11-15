@@ -33,24 +33,7 @@
                                 <?php the_content( ); ?>
                             </div>
                         </div>
-                        <!-- <div class="blog-de-img">
-                            <div class="zoom wow fadeInUp" data-wow-delay="0.0s">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/blog-details-2.jpg" alt="">
-                            </div>
-                            <div class="zoom wow fadeInUp" data-wow-delay="0.3s">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/blog-details-3.jpg" alt="">
-                            </div>
-                            <div class="zoom wow fadeInUp" data-wow-delay="0.5s">
-                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/blog-details-4.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="blog-de-quts-area">
-                            <div class="blog-de-quts  wow fadeInUp">
-                                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
-                            </div>
-                            <p class=" wow fadeInUp">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any news. Lorem ipsum dolor sit amet, </p> <br>
-                            <p class=" wow fadeInUp">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis.</p>
-                        </div> -->
+                        
                         <div class="next-pre-post wow fadeInUp">
                 <?php
                     $prev_post = get_adjacent_post(false, '', true);
@@ -117,7 +100,7 @@ if ($tags) {
         
                 <div class="related-posts-single">
                     <div class="zoom">
-                        <a href=""><img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/blog-details-5.jpg" alt="blog-details-5"></a>
+                        <a href=""><img src="<?php the_post_thumbnail_url( ); ?>" alt="blog-details-5"></a>
                         <h5><a href=""><?php the_title(); ?></a></h5>
                     </div>
                     <a href=""><?php the_title(); ?></a>
@@ -144,32 +127,70 @@ if ($tags) {
         ?>                                
                             </div>
                         </div>
-                        <div class="comment-area wow fadeInUp">
-                            <h3>Leave a Reply</h3>
-                            <form action="index.html">
-                                <div class="input wow fadeInUp">
-                                    <textarea name="text-area" cols="30" rows="8" placeholder="Comment*"></textarea>
-                                </div>
-                                <div class="input-50  wow fadeInUp">
-                                    <div class="input">
-                                        <input type="text" placeholder="Name*">
-                                    </div>
-                                    <div class="input">
-                                        <input type="email" placeholder="Email*">
-                                    </div>
-                                </div>
-                                <div class="input  wow fadeInUp">
-                                    <input type="text" placeholder="Website">
-                                </div>
-                                <div class="input checkbox">
-                                    <label>
-                                        <input class="wi-5" type="checkbox" checked="checked" />
-                                        <span>Save my name, email, and website in this browser for the next time I comment.</span>
-                                    </label>
-                                </div>
-                                <button type="submit" class="submit theme-btn  wow fadeInUp">Submit</button>
-                            </form>
+                        
+
+                <?php if ( 'open' == $post->comment_status ) : ?>
+                        
+                        <div id="respond">
+                        
+                        <h3><?php comment_form_title(); ?></h3>
+                        
+                        <?php cancel_comment_reply_link(); ?>
+                        
+                        <?php if ( get_option( 'comment_registration' ) && !$user_ID ) : ?>
+                        
+                        <p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
+                        
+                        <?php else : ?>
+                        
+                        <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+                        
+                        <?php if ( $user_ID ) : ?>
+                        
+                        <p>Logged in as <a href="<?php echo get_option( 'siteurl' ); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Log out of this account">Log out &raquo;</a></p>
+                    <div class="comment-area wow fadeInUp">
+                        <div class="input wow fadeInUp">
+                            <textarea name="comment" id="comment" placeholder="Comment*" cols="30" rows="8" tabindex="4"></textarea>
                         </div>
+                    </div>
+                        
+                        <?php else : ?>
+
+                <div class="comment-area wow fadeInUp">
+                        <div class="input wow fadeInUp">
+                            <textarea name="comment" id="comment" placeholder="Comment*" cols="30" rows="8" tabindex="4"></textarea>
+                        </div>
+                    
+                    <div class="input-50  wow fadeInUp">  
+                    <div class="input">
+                        <input type="text" name="author" id="author" value="" size="22" tabindex="1" placeholder="Name*" />
+                        
+                    </div>
+                        
+                    <div class="input">
+                        <input type="text" name="email" id="email" value="" size="22" tabindex="2" placeholder="Email*" />
+                    </div>
+                </div>
+                        
+                    <div class="input  wow fadeInUp">
+                        <input type="text" name="url" id="url" value="" size="22" tabindex="3" placeholder="Website*" />
+                    </div>
+                </div>
+                        
+                        <?php endif; ?>
+                    
+                        
+                        <p><input name="submit" type="submit" class="submit theme-btn  wow fadeInUp" id="submit" tabindex="5" value="Submit" /></p>
+                        <?php do_action( 'comment_form', $post->ID ); comment_id_fields(); ?>
+                        
+                        </form>
+                        
+                        <?php endif; // If registration required and not logged in ?>
+                        </div>
+                        
+                        <?php endif; // If comments are open: delete this and the sky will fall on your head ?>
+
+
                     </div>
                 </div>
 
@@ -205,27 +226,9 @@ if ($tags) {
 
 
                         <?php get_template_part( 'templates/follow_us_sidebar'); ?>
+                        <?php get_template_part( 'templates/latest_comment_sidebar'); ?>
 
 
-                        <div class="popular-comment">
-                            <h4 class="">Latest Comments</h4>
-                            <div class="popular-comment-items  wow fadeInUp">
-                                <h5><span><i class="far fa-comment-dots"></i></span>Charles</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                            </div>
-                            <div class="popular-comment-items wow fadeInUp">
-                                <h5><span><i class="far fa-comment-dots"></i></span>Charles</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                            </div>
-                            <div class="popular-comment-items wow fadeInUp">
-                                <h5><span><i class="far fa-comment-dots"></i></span>Charles</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                            </div>
-                            <div class="popular-comment-items wow fadeInUp">
-                                <h5><span><i class="far fa-comment-dots"></i></span>Charles</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                            </div>
-                        </div>
                         <div class="sm-post">
                             <a href="" class="sm-post-items  wow fadeInUp">
                                 <div class="zoom">
