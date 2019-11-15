@@ -3,6 +3,7 @@
 <!-- *************** Blog Details Start *************** -->
 <?php if (have_posts()):
 while ( have_posts() ): the_post(); ?>
+  <?php wpb_set_post_views(get_the_ID()); ?>
 <section class="blog-details-page section-padding">
   <div class="container">
     <div class="row">
@@ -172,6 +173,7 @@ wp_reset_query();
 ?>                                
             </div>
           </div>
+
           <?php if ( 'open' == $post->comment_status ) : ?>
           <div id="respond">
             <h3>
@@ -195,15 +197,14 @@ wp_reset_query();
               </p>
               <div class="comment-area wow fadeInUp">
                 <div class="input wow fadeInUp">
-                  <textarea name="comment" id="comment" placeholder="Comment*" cols="30" rows="8" tabindex="4">
-                  </textarea>
+                  <textarea name="comment" id="comment" placeholder="Comment*" cols="30" rows="8"></textarea>
+
                 </div>
               </div>
               <?php else : ?>
               <div class="comment-area wow fadeInUp">
                 <div class="input wow fadeInUp">
-                  <textarea name="comment" id="comment" placeholder="Comment*" cols="30" rows="8" tabindex="4">
-                  </textarea>
+                  <textarea name="comment" id="comment" placeholder="Comment*" cols="30" rows="8"></textarea>
                 </div>
                 <div class="input-50  wow fadeInUp">  
                   <div class="input">
@@ -229,7 +230,7 @@ wp_reset_query();
         </div>
       </div>
       <?php $popular_posts  = new WP_Query(array(
-'posts_per_page' => 5,
+'posts_per_page' => 3,
 'meta_key' => 'wpb_post_views_count',
 'orderby' => 'meta_value_num',
 'order' => 'DESC'
@@ -241,18 +242,18 @@ wp_reset_query();
             </h4>
             <?php if( $popular_posts->have_posts() ) :
 while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
-            <a href="">
+            <a href="<?php the_permalink(); ?>">
               <div class="popular-post-single  wow fadeInUp">
                 <div class="popular-post-content">
                   <h5>
                     <?php the_title(); ?>
                   </h5>
-                  <p>Consectetur adipisicing
+                  <p><?php echo substr(get_the_excerpt(), 0, 15) ."..."; ?>
                   </p>
                 </div>
                 <div class="popular-post-img">
                   <div class="zoom">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-1.jpg" alt="popular-post-1">
+                    <img src="<?php the_post_thumbnail_url('thumbnail' ); ?>" alt="popular-post-1">
                   </div>
                 </div>
               </div>
