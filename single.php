@@ -86,18 +86,22 @@
                                 <li>40 Shares</li>
                             </ul>
                         </div>
+                        
                         <div class="post-tag  wow fadeInUp">
+                            <?php $tag_list = get_the_tags() ? get_the_tags() : []?>
                             <ul>
-                                <li><a href="">LIDAYHO</a></li>
-                                <li><a href="">PIPS</a></li>
-                                <li><a href="">AVELTR</a></li>
+                            <?php foreach($tag_list as $tag): ?>
+                                <li><a href="?tag=<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+                            <?php endforeach; ?>
                             </ul>
+                            
                         </div>
+
+
                         <div class="related-posts-area">
                             <h4>Related Posts</h4>
                             <div class="related-posts  wow fadeInUp">
-        <?php
-//for use in the loop, list 5 post titles related to first tag on current post
+<?php
 $tags = wp_get_post_tags($post->ID);
 if ($tags) {
     $first_tag = $tags[0]->term_id;
@@ -198,28 +202,11 @@ if ($tags) {
         <?php endwhile; ?>
     <?php endif; ?>
                         </div>
-                        <div class="follow-us">
-                            <h4 class=" wow fadeInUp">Follow Us</h4>
-                            <div class="footer-follow wow fadeInUp">
-                                <p>
-                                    Save my name, email, and website in this browser for the next time I comment.
-                                </p>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                            <h4 class=" wow fadeInUp">Newsletter</h4>
-                            <p class=" wow fadeInUp">Fill your email below to subscribe to my newsletter</p>
-                            <form action="index.html" class="subscrib">
-                                <div class="input wow fadeInUp">
-                                    <input type="email" placeholder="Email">
-                                </div>
-                                <div class="input mb-0  wow fadeInUp">
-                                    <input type="text" placeholder="Subscribe" class="submit theme-btn" value="Subscribe">
-                                </div>
-                            </form>
-                        </div>
+
+
+                        <?php get_template_part( 'templates/follow_us_sidebar'); ?>
+
+
                         <div class="popular-comment">
                             <h4 class="">Latest Comments</h4>
                             <div class="popular-comment-items  wow fadeInUp">

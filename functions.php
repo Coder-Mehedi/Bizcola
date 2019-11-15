@@ -7,5 +7,5 @@ require_once 'include/widget.php';
 require_once 'include/filter_hook.php';
 require_once 'include/css_hook.php';
 
-require_once 'follow-us.php';
+require_once 'follow-us-widget.php';
 
