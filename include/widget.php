@@ -3,7 +3,7 @@
 function bizcola_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'bizcola' ),
-		'id'            => 'footer-1',
+		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'bizcola' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s footer-menu">',
 		'after_widget'  => '</div>',

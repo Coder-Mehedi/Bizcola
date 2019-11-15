@@ -1,22 +1,22 @@
 <?php
 
 // Register and load the widget
-function follow_us_load_widget() {
-    register_widget( 'follow_us_widget' );
+function recent_comment_load_widget() {
+    register_widget( 'recent_comment_widget' );
 }
-add_action( 'widgets_init', 'follow_us_load_widget' );
+add_action( 'widgets_init', 'recent_comment_load_widget' );
  
 // Creating the widget 
-class follow_us_widget extends WP_Widget {
+class recent_comment_widget extends WP_Widget {
  
 	function __construct() {
 	parent::__construct(
 	 
 	// Base ID of your widget
-	'follow_us_widget', 
+	'recent_comment_widget', 
 	 
 	// Widget name will appear in UI
-	__('Follow us sidebar', 'bizcola'), 
+	__('Recent Comment Sidebar', 'bizcola'), 
 	 
 	// Widget description
 	array( 'description' => __( 'widget for follow us sidebar', 'bizcola' ), ) 
@@ -34,7 +34,7 @@ public function widget( $args, $instance ) {
 	// echo $args['before_title'] . $title . $args['after_title'];
 	 
 	// This is where you run the code and display the output
-	get_template_part( 'templates/follow_us_sidebar' );
+	get_template_part( 'templates/latest_comment_sidebar' );
 	// echo $args['after_widget'];
 }
          
@@ -61,4 +61,4 @@ public function update( $new_instance, $old_instance ) {
 	$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 	return $instance;
 }
-} // Class follow_us_widget ends here
+} // Class recent_comment_widget ends here

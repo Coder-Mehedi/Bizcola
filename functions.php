@@ -8,6 +8,8 @@ require_once 'include/filter_hook.php';
 require_once 'include/css_hook.php';
 
 require_once 'follow-us-widget.php';
+require_once 'popular_post_widget.php';
+require_once 'recent_comment_widget.php';
 
 function wpb_set_post_views($postID) {
     $count_key = 'wpb_post_views_count';
