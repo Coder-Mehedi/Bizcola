@@ -151,6 +151,6 @@
 <?php get_footer(); ?>
 
 <?php
-$sidebars_widgets = get_option('sidebars_widgets');
-print_r($sidebars_widgets);
+// $sidebars_widgets = get_option('sidebars_widgets');
+// print_r($sidebars_widgets);
 ?>
