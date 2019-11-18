@@ -1,9 +1,13 @@
+<?php $number_of_post_to_show = get_field('number_of_post_to_show', 'widget_popular_post_widget-3') ?>
+
 <?php $popular_posts  = new WP_Query(array(
-              'posts_per_page' => 3,
+              'posts_per_page' => $number_of_post_to_show,
               'meta_key' => 'wpb_post_views_count',
               'orderby' => 'meta_value_num',
               'order' => 'DESC'
             )); ?>
+
+
 <div class="popular-post">
     <h4 class=" wow fadeInUp">Most Popular</h4>
 <?php if( $popular_posts->have_posts() ) :

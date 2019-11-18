@@ -45,49 +45,18 @@
         </div>
         <?php endwhile; ?>
 
-    
-
                     <div class="pagination">
     <?php $pagi_args = array('prev_text' => '<<', 'next_text' => '>>' ); ?>
-    <?php echo paginate_links($pagi_args); 
-    
-
-    ?>
+    <?php echo paginate_links($pagi_args); ?>
 
                     </div>
     <?php endif; ?>
     
                 </div>
 
-
                 <div class="col-lg-4">
                     <div class="sidebar-right">
-                        
                         <?php dynamic_sidebar( 'sidebar-1' ) ?>
-
-                        <div class="sm-post">
-                            <a href="" class="sm-post-items  wow fadeInUp">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-5.jpg" alt="">
-                                </div>
-                                <p>Check Out New Trendy Smart
-                                    Phones in Next Decade</p>
-                            </a>
-                            <a href="" class="sm-post-items  wow fadeInUp">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-6.jpg" alt="">
-                                </div>
-                                <p>Check Out New Trendy Smart
-                                    Phones in Next Decade</p>
-                            </a>
-                            <a href="" class="sm-post-items  wow fadeInUp">
-                                <div class="zoom">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/blog-details/popular-post-7.jpg" alt="">
-                                </div>
-                                <p>Check Out New Trendy Smart
-                                    Phones in Next Decade</p>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ class recent_comment_widget extends WP_Widget {
 	__('Recent Comment Sidebar', 'bizcola'), 
 	 
 	// Widget description
-	array( 'description' => __( 'widget for follow us sidebar', 'bizcola' ), ) 
+	array( 'description' => __( 'widget for recent comment sidebar', 'bizcola' ), ) 
 	);
 }
  
@@ -34,7 +34,7 @@ public function widget( $args, $instance ) {
 	// echo $args['before_title'] . $title . $args['after_title'];
 	 
 	// This is where you run the code and display the output
-	get_template_part( 'templates/latest_comment_sidebar' );
+	get_template_part( 'templates/latest_comment_template' );
 	// echo $args['after_widget'];
 }
          
