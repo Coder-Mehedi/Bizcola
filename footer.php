@@ -40,9 +40,11 @@
         </div>
     </section>
     <!-- ================= Contact Area End =============== -->
+<?php if($customize_copyright_text): ?>
     <footer>
-        <p><?php echo $customize_copyright_text ? $customize_copyright_text : ''; ?></p>
+        <p><?php echo $customize_copyright_text; ?></p>
     </footer>
+<?php endif; ?>
     <?php wp_footer() ?>
     <script>
 

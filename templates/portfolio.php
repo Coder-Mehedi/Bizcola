@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 text-center">
                     <div class="section-heading">
-                        <h2 class="wow fadeInDown">Recent Projects</h2>
-                        <p class="wow fadeInUp">Etiam id augue sollicitudin ex ultrices accumsan id eget urna. Duis ut vestibulum arcu. Ut congue facilisis nulla.</p>
+                        <h2 class="wow fadeInDown"><?php echo $recent_project_section_title ? $recent_project_section_title: ''; ?></h2>
+                        <p class="wow fadeInUp"><?php echo $recent_project_section_description ? $recent_project_section_description : ''; ?></p>
                     </div>
                 </div>
             </div>
@@ -48,14 +48,15 @@ if ( $query->have_posts() ):
 
 ?>
             
-                <div class="col-lg-<?php echo $space_cover ? $space_cover : '5'; ?> col-md-<?php echo $space_cover ? $space_cover : '5'; ?> grid-item <?php foreach($taxo[$i] as $key => $nai): ?> <?php echo $taxo[$i][$key]->slug; ?> <?php endforeach; ?>wow fadeInDown">
+            <?php if($images): ?>
+                <div class="col-lg-<?php echo $space_cover ? $space_cover : '6'; ?> col-md-<?php echo $space_cover ? $space_cover : '6'; ?> grid-item <?php foreach($taxo[$i] as $key => $nai): ?> <?php echo $taxo[$i][$key]->slug; ?> <?php endforeach; ?>wow fadeInDown">
                     <div class="port-img">
-                        <a href="<?php the_field('portfolio_image') ?>" data-fancybox="images" data-caption="image 1">
-                            <img src="<?php the_field('portfolio_image') ?>" alt="portlio-image">
-                            
+                        <a href="<?php echo $images[$i]['url'] ?>" data-fancybox="images" data-caption="image 1">
+                            <img src="<?php echo $images[$i]['url'] ?>" alt="portlio-image">
                         </a>
                     </div>
                 </div>
+            <?php endif; ?>
         <?php $i++;?>
     <?php endwhile; ?>
 <?php endif; ?>
@@ -63,3 +64,4 @@ if ( $query->have_posts() ):
         </div>
     </section>
     <!-- project area end -->
+    <?php // print_r($images); ?>
