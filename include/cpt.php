@@ -77,3 +77,36 @@ function cptui_register_my_cpts() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
+
+
+function cptui_register_my_taxes() {
+
+	/**
+	 * Taxonomy: Groupings.
+	 */
+
+	$labels = [
+		"name" => __( "Groupings", "bizcola" ),
+		"singular_name" => __( "Grouping", "bizcola" ),
+	];
+
+	$args = [
+		"label" => __( "Groupings", "bizcola" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'groupings', 'with_front' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "groupings",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+		];
+	register_taxonomy( "groupings", [ "portfolio" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes' );

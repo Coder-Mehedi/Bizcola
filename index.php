@@ -44,7 +44,7 @@
 
 
     
-    <?php $services_items = new WP_Query(['post_type' => 'our_service']); ?>
+    <?php $services_items = new WP_Query(['post_type' => 'our_service', 'posts_per_page' => -1]); ?>
     <?php if ( $services_items->have_posts()): ?>
     <!-- ============= Our Services Area Start =========== -->
     <section class="service-area section-padding">

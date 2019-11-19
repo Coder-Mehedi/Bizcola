@@ -1,22 +1,6 @@
 <?php get_header( ); ?>
-    <!-- ==========Page area start ========== -->
-    <div class="page-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-content">
-                        <h2 class="wow fadeInDown">Our Services</h2>
-                        <ul class="wow fadeInUp">
-                            <li><a href="index.html">Home - </a></li>
-                            <li class="active"><a href="service.html">Services</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php get_template_part( 'templates/page_top_header'); ?>
 
-    <!-- ============= Page area end =========== -->
     <!-- ============= Service-top area Start =========== -->
 
     <section class="service-bg-area section-padding">
@@ -35,110 +19,37 @@
         </div>
     </section>
     <!-- ============= Service-top area Start =========== -->
+<?php $service_posts = new WP_Query(['post_type' => 'our_service']); ?>
+<?php if ( $service_posts->have_posts()): ?>
     <!-- ============= Service  Area Start =========== -->
     <section class="service-page section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2 class="wow fadeInDown">Services</h2>
-                        <p class="wow fadeInUp">Etiam id augue sollicitudin ex ultrices accumsan id eget urna. Duis ut vestibulum arcu. Ut congue facilisis nulla.</p>
+                        <h2 class="wow fadeInDown"><?php echo get_field("our_services_title", 'option') ? get_field('our_services_title', 'option') : 'Services' ?></h2>
+                        <p class="wow fadeInUp"><?php echo get_field('our_services_description', 'option') ? get_field('our_services_description', 'option') : ''; ?></p>
                     </div>
                 </div>
             </div>
             <div class="row  text-center">
+<?php while ($service_posts->have_posts()) : $service_posts->the_post(); ?>
                 <div class="col-lg-6 wow fadeInRight">
                     <div class="service-page-items">
                         <div class="zoom">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="">
+                            <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                         </div>
                         <div class="service-page-content">
-                            <h4>Ship Cargo</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                            <h4><?php the_title( ); ?></h4>
+                            <p><?php the_excerpt(); ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6  wow fadeInLeft">
-                    <div class="service-page-items">
-                        <div class="zoom">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="">
-                        </div>
-                        <div class="service-page-content">
-                            <h4>Air Cargo</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight">
-                    <div class="service-page-items">
-                        <div class="zoom">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="">
-                        </div>
-                        <div class="service-page-content">
-                            <h4>Ship Cargo</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInLeft">
-                    <div class="service-page-items">
-                        <div class="zoom">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="">
-                        </div>
-                        <div class="service-page-content">
-                            <h4>Air Cargo</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight">
-                    <div class="service-page-items">
-                        <div class="zoom">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-1.jpg" alt="">
-                        </div>
-                        <div class="service-page-content">
-                            <h4>Ship Cargo</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInLeft">
-                    <div class="service-page-items">
-                        <div class="zoom">
-                            <img src="<?php echo get_template_directory_uri() ?>/assets/img/service/service-2.jpg" alt="">
-                        </div>
-                        <div class="service-page-content">
-                            <h4>Air Cargo</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        </div>
-                    </div>
-                </div>
+<?php endwhile; ?>
+                
             </div>
         </div>
     </section>
     <!-- ============= Service  Area End =========== -->
+<?php endif; ?>
 <?php get_footer( ) ?>
