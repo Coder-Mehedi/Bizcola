@@ -21,6 +21,31 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 /*=========================HeaderArea Start =========================*/
+
+.wp-caption {
+}
+
+.wp-caption-text {
+}
+
+.screen-reader-text {
+}
+
+.gallery-caption {
+}
+
+.bypostauthor {
+}
+
+.alignright {
+}
+
+.alignleft {
+}
+
+.aligncenter {
+}
+
 header.header-area {
     background: #fff none repeat scroll 0 0;
     padding: 15px 0;

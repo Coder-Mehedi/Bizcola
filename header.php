@@ -1,7 +1,7 @@
 <?php require_once 'include/acf_header_query.php'; ?>
 
 <!DOCTYPE html>
-<html class="no-js" lang="la">
+<html class="no-js" <?php language_attributes(); ?>>
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <?php wp_head() ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <!-- ========= preloader area Start =========== -->
     <div id="preloader">
         <div class="loader">
@@ -32,7 +32,7 @@
                             <span class="main-menu-btn-icon"></span>
                         </label>
                         <div class="nav-brand">
-                            <a href="<?php bloginfo( 'url' ) ?>"><img src="<?php echo $theme_logo_setup['url'] ? $theme_logo_setup['url'] : ""; ?>" alt=""></a>
+                            <a href="<?php echo esc_url( home_url() ) ?>"><img src="<?php echo $theme_logo_setup['url'] ? $theme_logo_setup['url'] : ""; ?>" alt=""></a>
                         </div>
                         <!-- Sample menu definition -->
 

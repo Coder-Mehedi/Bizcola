@@ -1,4 +1,4 @@
-<?php require_once (dirname(__FILE__)."/../include/acf_query/clients_query.php"); ?>
+<?php require_once(dirname(__FILE__)."/../include/acf_query/clients_query.php"); ?>
 
 
     <!-- ============= Happy Clients Area Start =========== -->
