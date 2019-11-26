@@ -1,8 +1,8 @@
 /*!
 Theme Name: Bizcola
-Theme URI: #
+Theme URI: #theme
 Author: Mehedi Hasan
-Author URI: #
+Author URI: #author
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -44,6 +44,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .aligncenter {
+}
+
+div[role='alert'] {
+    color: white;
 }
 
 header.header-area {

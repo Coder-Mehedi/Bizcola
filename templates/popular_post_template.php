@@ -16,12 +16,14 @@ while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
     <div class="popular-post-single  wow fadeInUp">
         <div class="popular-post-content">
             <h5><?php the_title(); ?></h5>
-            <p><?php echo substr(get_the_excerpt(), 0, 15) ."..."; ?></p>
+            <p><?php echo substr(get_the_excerpt(), 0, 15); ?></p>
         </div>
         <div class="popular-post-img">
+          <?php if(get_the_post_thumbnail_url( )): ?>
             <div class="zoom">
                 <img src="<?php the_post_thumbnail_url('thumbnail' ); ?>" alt="popular-post-1">
             </div>
+          <?php endif; ?>
         </div>
     </div>
     </a>

@@ -1,4 +1,17 @@
-<?php require_once 'include/acf_header_query.php'; ?>
+<?php
+
+if(function_exists('acf_add_local_field_group')){
+// Header Section
+if( have_rows('global_setting_group','option') ): 
+    while( have_rows('global_setting_group','option') ): the_row();
+        
+        $theme_logo_setup = get_sub_field('theme_logo_setup');
+
+    endwhile;
+endif;
+
+}
+?>
 
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
@@ -7,7 +20,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizCola</title>
+    <title><?php echo get_bloginfo( 'name' ); ?></title>
 
     <?php wp_head() ?>
 </head>

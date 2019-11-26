@@ -50,12 +50,12 @@
                         <?php
                             $prev_post = get_adjacent_post(false, '', true);
                             $next_post = get_adjacent_post(false, '', false);
+                            // print_r($prev_post);
                             ?>
                         <?php if(!empty($prev_post)): ?>
                         <a href="<?php echo get_permalink($prev_post->ID) ?>">
                             <div class="pre-post">
-                                <h6>Previous Post
-                                </h6>
+                                <h6>Previous Post</h6>
                                 <p>
                                     <?php echo $prev_post->post_title?>
                                 </p>
@@ -66,10 +66,9 @@
                         </div>
                         <?php endif; ?>
                         <?php if(!empty($next_post)): ?>
-                        <a href="<?php echo get_permalink($next_post->ID) ?>">
+                        <a href="<?php echo $next_post->guid; ?>">
                             <div class="pre-post tx-right">
-                                <h6>Next Post
-                                </h6>
+                                <h6>Next Post</h6>
                                 <p>
                                     <?php echo $next_post->post_title ?>
                                 </p>

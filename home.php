@@ -27,9 +27,11 @@
                 </a>
             </div>
             <div class="blog-de-post">
-                <div class="zoom  wow fadeInUp">
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="blog">
-                </div>
+                <?php if(get_the_post_thumbnail_url( )): ?>
+                    <div class="zoom  wow fadeInUp">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="blog">
+                    </div>
+                <?php endif; ?>
                 <div class="post-tag  wow fadeInUp">
                     <?php $tag_list = get_the_tags() ? get_the_tags() : []?>
                     <ul>
@@ -39,7 +41,9 @@
                     </ul>
                     
                 </div>
-                <p><?php echo substr(get_the_content(), 0, 200); ?></p>
+                <?php if(get_the_content( )): ?>
+                    <p><?php echo substr(get_the_content(), 0, 200); ?></p>
+                <?php endif; ?>
                 <a class="theme-btn mt-30" href="<?php the_permalink(); ?>">Read more</a>
             </div>
         </div>
